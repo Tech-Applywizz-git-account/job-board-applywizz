@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful - ApplyWizz</title>
+</head>
+
+<body
+    style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f4f4f4;">
+    <div
+        style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px; border-radius: 10px 10px 0 0; text-align: center;">
+        <h1 style="color: white; margin: 0; font-size: 28px;">🎉 Payment Successful!</h1>
+    </div>
+
+    <div
+        style="background: #ffffff; padding: 30px; border-radius: 0 0 10px 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        <p style="font-size: 16px; margin-bottom: 20px;">Hi <strong>{{FULL_NAME}}</strong>,</p>
+
+        <p style="font-size: 16px; margin-bottom: 20px;">Thank you for your payment! Your transaction has been
+            successfully processed and your ApplyWizz account is now active.</p>
+
+        <div
+            style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 25px 0; border-left: 4px solid #667eea;">
+            <h3 style="margin-top: 0; color: #667eea; font-size: 18px;">📋 Transaction Details</h3>
+            <table style="width: 100%; border-collapse: collapse;">
+                <tr>
+                    <td style="padding: 8px 0; font-weight: bold; color: #555;">JB ID:</td>
+                    <td style="padding: 8px 0; color: #333;">{{JB_ID}}</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px 0; font-weight: bold; color: #555;">Plan:</td>
+                    <td style="padding: 8px 0; color: #333;">{{PLAN_NAME}}</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px 0; font-weight: bold; color: #555;">Amount Paid:</td>
+                    <td style="padding: 8px 0; color: #333; font-weight: bold;">${{AMOUNT}}</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px 0; font-weight: bold; color: #555;">Payment Method:</td>
+                    <td style="padding: 8px 0; color: #333;">{{PAYMENT_METHOD}}</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px 0; font-weight: bold; color: #555;">Transaction ID:</td>
+                    <td style="padding: 8px 0; color: #333; font-family: monospace; font-size: 14px;">{{TRANSACTION_ID}}
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px 0; font-weight: bold; color: #555;">Date:</td>
+                    <td style="padding: 8px 0; color: #333;">{{PAYMENT_DATE}}</td>
+                </tr>
+            </table>
+        </div>
+
+        <div
+            style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); padding: 25px; border-radius: 8px; margin: 25px 0;">
+            <h3 style="margin-top: 0; color: #2e7d32; font-size: 20px;">📝 Next Step: Complete Your Onboarding</h3>
+            <p style="font-size: 15px; color: #1b5e20; margin-bottom: 20px;">
+                To start receiving personalized job links and activate all features, please complete your onboarding
+                form:
+            </p>
+
+            <div style="text-align: center; margin: 30px 0;">
+                <a href="{{ONBOARDING_LINK}}" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+                          color: white; 
+                          padding: 16px 45px; 
+                          text-decoration: none; 
+                          border-radius: 50px; 
+                          font-weight: bold; 
+                          font-size: 17px; 
+                          display: inline-block;
+                          box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+                          transition: all 0.3s ease;">
+                    Complete Onboarding Form →
+                </a>
+            </div>
+
+            <div
+                style="background: white; padding: 15px; border-radius: 6px; margin-top: 20px; border-left: 3px solid #4caf50;">
+                <p style="font-size: 14px; color: #555; margin: 0;">
+                    <strong>✅ What to expect:</strong>
+                </p>
+                <ul style="font-size: 14px; color: #666; margin: 10px 0; padding-left: 20px;">
+                    <li>Your account details will be pre-filled for security</li>
+                    <li>Protected fields cannot be modified</li>
+                    <li>Takes only 5-10 minutes to complete</li>
+                    <li>You'll start receiving job links immediately after</li>
+                </ul>
+            </div>
+        </div>
+
+        <div
+            style="background: #fff3cd; padding: 18px; border-radius: 8px; margin: 25px 0; border-left: 4px solid #ffc107;">
+            <p style="margin: 0; font-size: 14px; color: #856404;">
+                <strong>🔒 Security Notice:</strong> This onboarding link is unique to your account ({{JB_ID}}).
+                Do not share it with anyone. If you didn't make this payment, please contact us immediately at
+                <a href="mailto:support@apply-wizz.com"
+                    style="color: #856404; text-decoration: underline;">support@apply-wizz.com</a>
+            </p>
+        </div>
+
+        <div style="background: #e3f2fd; padding: 18px; border-radius: 8px; margin: 25px 0;">
+            <h4 style="margin-top: 0; color: #1976d2; font-size: 16px;">📞 Need Help?</h4>
+            <p style="font-size: 14px; color: #0d47a1; margin: 5px 0;">
+                Our support team is here to assist you:
+            </p>
+            <ul style="font-size: 14px; color: #1565c0; margin: 10px 0; padding-left: 20px;">
+                <li>Email: <a href="mailto:support@apply-wizz.com" style="color: #1976d2;">support@apply-wizz.com</a>
+                </li>
+                <li>Response time: Within 24 hours</li>
+            </ul>
+        </div>
+
+        <div style="margin-top: 40px; padding-top: 25px; border-top: 2px solid #e0e0e0; text-align: center;">
+            <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                Thank you for choosing ApplyWizz!
+            </p>
+            <p style="font-size: 12px; color: #999; margin: 5px 0;">
+                © 2026 ApplyWizz. All rights reserved.
+            </p>
+            <p style="font-size: 11px; color: #aaa; margin: 5px 0;">
+                This is an automated email. Please do not reply to this message.
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
