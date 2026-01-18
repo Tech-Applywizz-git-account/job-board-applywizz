@@ -6,7 +6,22 @@ import { uploadResumeToS3 } from '../lib/s3Service';
 
 const ClientOnboarding = () => {
     const [searchParams] = useSearchParams();
-    const jbIdFromUrl = searchParams.get('jb_id'); // e.g. /onboard?jb_id=JB-123
+    const jbIdRaw = searchParams.get('jb_id');
+
+    // Decode the obfuscated JB-ID (e.g. 74-66-45-50 back to JB-2)
+    const jbIdFromUrl = (() => {
+        if (!jbIdRaw) return null;
+        // Check if encoded (only numbers and dashes, no letters)
+        if (/^[0-9-]+$/.test(jbIdRaw) && !/[a-zA-Z]/.test(jbIdRaw)) {
+            try {
+                return jbIdRaw.split('-').map(code => String.fromCharCode(parseInt(code))).join('');
+            } catch (e) {
+                console.warn("Failed to decode JB-ID", e);
+                return jbIdRaw;
+            }
+        }
+        return jbIdRaw;
+    })();
     const [isAutoFilled, setIsAutoFilled] = useState(false);
     const [isLoadingFromUrl, setIsLoadingFromUrl] = useState(false);
 
