@@ -481,12 +481,19 @@ const ClientOnboarding = () => {
 
                         <div className="grid grid-cols-1 gap-6">
                             {/* File Upload */}
-                            <div className="p-6 border-2 border-dashed border-gray-300 rounded-xl bg-gray-50 text-center hover:bg-gray-100 transition-colors">
+                            <div className="p-6 border-2 border-dashed border-gray-300 rounded-xl bg-gray-50 text-center hover:bg-gray-100 transition-colors group">
                                 <label className="cursor-pointer block">
                                     <span className="block text-gray-700 font-semibold mb-2">Upload Resume (PDF) *</span>
-                                    <input type="file" accept=".pdf" onChange={handleFileChange} className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" />
+                                    <div className="flex justify-center mt-3">
+                                        <input
+                                            type="file"
+                                            accept=".pdf"
+                                            onChange={handleFileChange}
+                                            className="block text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 cursor-pointer"
+                                        />
+                                    </div>
                                 </label>
-                                {resumeFile && <p className="mt-2 text-sm text-green-600">Selected: {resumeFile.name}</p>}
+                                {resumeFile && <p className="mt-2 text-sm text-green-600 font-medium">Selected: {resumeFile.name}</p>}
                             </div>
 
                             <div>
