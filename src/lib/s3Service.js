@@ -40,7 +40,7 @@ export const uploadResumeToS3 = async (file, jbId) => {
         throw new Error("File and JB ID are required");
     }
 
-    // Format: clients/resumes/JB-id-YYYY-MM-DD/resume.pdf
+    // Format: resumes/JB-id-YYYY-MM-DD/resume.pdf
     // Date format: YYYY-MM-DD (e.g., 2026-01-17)
     const now = new Date();
     const year = now.getFullYear();
@@ -54,8 +54,8 @@ export const uploadResumeToS3 = async (file, jbId) => {
     // Get file extension
     const fileExt = file.name.split('.').pop();
 
-    // Construct the exact path: clients/resumes/JB-id-YYYY-MM-DD/resume.pdf
-    const folderPath = `clients/resumes/${sanitizedJbId}-${dateStr}`;
+    // Construct the exact path: resumes/JB-id-YYYY-MM-DD/resume.pdf
+    const folderPath = `resumes/${sanitizedJbId}-${dateStr}`;
     const fileName = `resume.${fileExt}`;
     const fullKey = `${folderPath}/${fileName}`;
 
