@@ -296,7 +296,7 @@ const ClientOnboarding = () => {
             };
 
             // C. Submit to ApplyWizz API
-            const apiUrl = "https://www.apply-wizz.me/api/direct-onboard";
+            const apiUrl = "https://ticketingtoolapplywizz.vercel.app/api/direct-onboard";
             const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: {
@@ -563,3 +563,4 @@ const CheckboxField = ({ label, ...props }) => (
 );
 
 export default ClientOnboarding;
+
